@@ -1,0 +1,20 @@
+# for local development
+version: "3.7"
+services:
+  ludo:
+    image: dscribe/frontend
+    build:
+      context: .
+      target: develop-stage
+    ports:
+      - ${DEV_PORT}:${DEV_PORT}
+    volumes:
+      - .:/app
+    command: /bin/sh -c "yarn && chown -R 1000:1000 node_modules && yarn serve --port ${DEV_PORT}"
+    restart: unless-stopped
+    networks:
+      - local
+
+networks:
+  local:
+    name: ludo_frontend

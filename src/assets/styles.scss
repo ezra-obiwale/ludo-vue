@@ -1,0 +1,59 @@
+body {
+  margin: 0;
+  background-color: black;
+}
+
+a {
+  text-decoration: none;
+}
+
+.yellow:not(.no-color) {
+  background-color: yellow !important;
+}
+
+.green:not(.no-color) {
+  background-color: green !important;
+}
+
+.blue:not(.no-color) {
+  background-color: blue !important;
+}
+
+.red:not(.no-color) {
+  background-color: red !important;
+}
+
+.hide {
+  display: none !important;
+}
+
+.github {
+  opacity: .5;
+  position: fixed;
+  top: 10px;
+  right: 10px;
+  padding: 10px;
+  background-color: yellowgreen;
+
+  &:hover {
+    opacity: 1;
+  }
+}
+
+@media (min-width: 768px) {
+  .mobile {
+    display: none;
+  }
+}
+
+@media (max-width: 767px) {
+  .desktop {
+    display: none!important;
+  }
+
+  .github {
+    opacity: 1;
+    text-align: center;
+    position: unset;
+  }
+}
